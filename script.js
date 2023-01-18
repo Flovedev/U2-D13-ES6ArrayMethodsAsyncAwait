@@ -26,6 +26,7 @@ const getItems = async (endpoint = "books") => {
     }
 }
 
+let cartCounter = []
 
 const addToCart = (element) => {
     let modalNode = document.getElementById("cart-container")
@@ -40,6 +41,9 @@ const addToCart = (element) => {
             <button type="button" class="btn btn-danger" onclick="removeFromCart(this)">Delete</button>
             </p>
         </div>`
+
+    cartCounter.push(1)
+    cartCount()
 }
 
 const removeElement = (element) => {
@@ -55,6 +59,15 @@ const emptyCart = () => {
     let cartNode = document.getElementById("cart-container")
     cartNode.innerHTML = ``
 }
+
+
+const cartCount = () => {
+    let counterNode = document.getElementById("cart-number")
+    let numberCart = cartCounter.reduce((number) => number + 1, 0);
+    counterNode.innerHTML = numberCart
+    console.log(numberOfBooksInTheCart)
+}
+
 
 // const searchBar = () => {
 
