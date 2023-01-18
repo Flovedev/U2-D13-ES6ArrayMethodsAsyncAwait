@@ -10,7 +10,7 @@ const getItems = async (endpoint = "books") => {
 
         let containerNode = document.getElementById("main-container")
         items.forEach((book, index) => {
-            containerNode.innerHTML += `<div class="card border" id="${index}" style="width: 18rem;">
+            containerNode.innerHTML += `<div class="card border m-1" id="${index}" style="width: 18rem;">
             <img src="${book.img}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${book.title}</h5>
@@ -49,6 +49,11 @@ const removeFromCart = (element) => {
     // let borderNode =let borderNode = document.getElementById(`${element}`)
     element.closest('.cart-item').classList.add("d-none")
 
+}
+
+const emptyCart = () => {
+    let cartNode = document.getElementById("cart-container")
+    cartNode.innerHTML = ``
 }
 
 // const searchBar = () => {
