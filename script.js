@@ -36,7 +36,7 @@ const addToCart = (element) => {
 
     modalNode.innerHTML += `
         <div class="cart-item">
-            <p>${indexNode.title}<span>${indexNode.price}</span>
+            <p class="title-cart">${indexNode.title}<span>${indexNode.price}</span>
             <button type="button" class="btn btn-danger" onclick="removeFromCart(this)">Delete</button>
             </p>
         </div>`
@@ -51,31 +51,28 @@ const removeFromCart = (element) => {
 
 }
 
-const searchBar = () => {
+// const searchBar = () => {
 
-    let allTitlesNode = document.getElementsByClassName("card-title")
-    let textNode = document.getElementById("search-bar").value.toLowerCase()
-    let titlesNode = document.querySelector(".card-title").innerHTML.toLowerCase()
+//     let allTitlesNode = document.getElementsByClassName("card-title")
+//     let textNode = document.getElementById("search-bar").value.toLowerCase()
+//     let titlesNode = document.querySelector(".card-title").innerHTML.toLowerCase()
 
-    console.log(allTitlesNode)
+//     console.log(allTitlesNode)
 
-    if (textNode.length >= 3) {
-        if (titlesNode.includes(textNode)) {
+//     if (textNode.length >= 3) {
+//         if (titlesNode.includes(textNode)) {
 
-        } else {
-            allTitlesNode.classList.add("d-none")
-        }
-    } else {
-        for (let index = 0; index < allTitlesNode.length; index++) {
-            const element = allTitlesNode[index];
+//         } else {
+//             allTitlesNode.classList.toggle("d-none")
+//         }
+//     } else {
+//         for (let index = 0; index < allTitlesNode.length; index++) {
+//             const element = allTitlesNode[index];
+//             element.closest(".card").classList.toggle("d-none")
+//         }
+//     }
+// }
 
-            element.closest(".card").classList.toggle("d-none")
-
-        }
-    }
-
-
-}
-
-
-getItems()
+window.onload = () => {
+    getItems()
+};
